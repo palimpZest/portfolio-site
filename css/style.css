@@ -1,0 +1,790 @@
+/* CSS validated using the CSS Level 3 option. Other properties were included in the svg-select.css file*/
+
+/*
+ *
+ * Common
+ *
+ */
+
+[class^="col-"] {
+    padding: 0;
+}
+
+/*
+source:
+http://stackoverflow.com/questions/22748673/fix-bootstrap-padding-on-nested-columns
+*/
+
+
+body {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    background-color: #d2d2d2;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+}
+
+a,
+menu,
+button {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+header {
+    margin: 0;
+    width: 100%;
+}
+
+h1 {
+    width: 100%;
+    font: 700 44px Poiret One, cursive;
+    margin: auto;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 700;
+    width: 45%;
+    height: 40px;
+    padding: 5px 0 5px 3px;
+    cursor: default;
+    color: #bbb;
+    line-height: 1;
+    z-index: 1;
+    text-shadow: 0 1px 1px #000;
+    margin-top: 0;
+}
+
+h6 {
+    text-align: right;
+}
+
+img {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+}
+
+span {
+    font-size: 16px;
+    cursor: pointer;
+    height: 40px;
+    text-align: right;
+    padding-top: 20px;
+    color: #69e;
+    text-shadow: 1px 1px #458;
+}
+
+button {
+    padding: 7px;
+}
+
+
+/*
+ *
+ * Breakpoints
+ *
+ */
+
+
+@media only screen and (max-width: 502px) {
+
+    div.col-xs-6.col-sm-5.col-md-2,
+    div.col-xs-6.col-sm-7.col-md-2 {
+        height: 160px;
+    }
+
+}
+
+@media only screen and (max-width: 431px) {
+
+    h1 {
+        font-size: 26px;
+        padding-top: 16px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    div.title h2,
+    div.placeholder-title h2 {
+        font-size: 17px;
+    }
+
+    svg.icon {
+        padding-left: 4px;
+    }
+
+    span {
+        text-align: center;
+        padding-top: 10px;
+        line-height: 1;
+    }
+
+    .row {
+        background-color: #888;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    h5 {
+        width: 40%;
+        padding: 52px 0 0 5px;
+        color: #fff;
+        font-weight: 900;
+        text-shadow: 3px 3px 3px #000;
+    }
+
+    div.arrow {
+        font-size: 45px;
+        color: #000;
+    }
+
+    div.image-project img{
+        margin-top: 70px;
+    }
+
+    div.description {
+        text-align: left;
+    }
+
+    div.modal-body {
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    div.logo {
+        width: 25%;
+        font-size: 48px;
+    }
+
+    div.menu {
+        width: 25%;
+    }
+
+    div.about {
+        background-color: #aaa;
+        padding: 1px 15px 0 30px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+}
+
+@media only screen and (max-width: 991px) {
+
+    nav.open {
+        width: 980px;
+    }
+
+    div.bio-pic,
+    div.skills {
+        height: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    div.skills {
+        background-color: #888;
+        padding-top: 15px;
+        font-size: 18px;
+    }
+
+    div.image-project,
+    div.project-placeholder,
+    div.description {
+        height: 225px;
+    }
+
+    div.title,
+    div.skills-link {
+        height: 47px;
+    }
+
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+
+    nav.open {
+        width: calc(100%/1.5);
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .container {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 1201px) {
+
+    nav.open {
+        width: 780px;
+    }
+
+}
+
+
+/*
+ *
+ * Off-Canvas layout styles.
+ *
+ */
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    -webkit-transform: translate(-9999px, 0);
+    transform: translate(-9999px, 0);
+    transition: transform 0.5s ease;
+}
+
+nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background-color: #69e;
+    height: 190px;
+    z-index: 1;
+}
+
+.sections-menu {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 40px;
+    font-weight: 900;
+    font-family: "Abel",sans-serif;
+}
+
+
+/*
+ *
+ * Icons
+ * Source: https://icomoon.io
+ */
+
+.icon {
+    width: 1em;
+    height: 60px;
+    vertical-align: middle;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+
+/*
+ *
+ * Grid
+ *
+ */
+
+.container {
+    margin-top: 5px;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.row {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.col-xs-7.col-sm-8.col-md-2 {
+    background-color: #888;
+}
+
+div.skills {
+    height: 100%;
+}
+
+/*
+ *
+ * Header
+ *
+ */
+
+.navigation-bar {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    height: 60px;
+    background-color: #bbb;
+    color: #69e;
+    border-bottom: 1px solid #888;
+}
+
+.social-media-bar {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    background-color: #bbb;
+    height: 60px;
+    cursor: pointer;
+    color: #69e;
+    font-size: 36px;
+    text-shadow: 1px 1px #458;
+    border-bottom: 1px solid #888;
+    align-items: center;
+}
+
+
+/*
+ *
+ * Top Level Navigation
+ *
+ */
+
+.logo {
+    width: 15%;
+    font: 700 48px Abel, sans-serif;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    background-color: #bbb;
+    text-shadow: 1px 1px #458;
+}
+
+.menu {
+    color: #888;
+    width: 10%;
+    display: inherit;
+}
+
+.menu-icon {
+    text-align: center;
+    padding-top: 5px;
+    width: 48px;
+    font-size: 42px;
+    cursor: crosshair;
+}
+
+.header {
+    width: 75%;
+    text-align: center;
+    background-color: #bbb;
+}
+
+.name {
+    width: 100%;
+    text-shadow: 1px 1px #458;
+}
+
+
+/* Social media icons*/
+
+.email-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.email-button:hover {
+    background-color: #e00;
+    color: #fff;
+}
+
+.twitter-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.twitter-button:hover {
+    background-color: #5ae;
+    color: #fff;
+}
+
+.facebook-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.facebook-button:hover {
+    background-color: #125;
+    color: #fff;
+}
+
+.linkedin-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.linkedin-button:hover {
+    background-color: #07b;
+    color: #fff;
+}
+
+.github-button {
+    width: calc(100%/8);
+    display: inherit;
+
+}
+.github-button:hover {
+    background-color: #47b;
+    color: #fff;
+}
+
+.google-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+.google-button:hover{
+    background-color: #d43;
+    color: #fff;
+}
+
+.skype-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.skype-button:hover {
+    background-color: #0ae;
+    color: #fff;
+}
+
+.pinterest-button {
+    width: calc(100%/8);
+    display: inherit;
+}
+
+.pinterest-button:hover {
+    background-color: #b02;
+    color: #fff;
+}
+
+
+/*
+ *
+ * Presentation, information
+ *
+ */
+
+.about {
+    height: 190px;
+    color: #333;
+    background-color: #ccc;
+    padding: 30px 30px 30px 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.bio-pic {
+    object-fit: cover;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.skills {
+    height: 190px;
+    font-weight: 700;
+    color: #333;
+    text-align: left;
+    background-color: #ccc;
+    padding: 10px 10px 10px 10px;
+}
+
+
+/*
+ *
+ * Sections
+ *
+ */
+
+.project-section {
+    font: 700 22px Abel, sans-serif;
+    background-color: #567;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+.section-2 {
+    font: 700 22px Abel, sans-serif;
+    background-color: #458;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+.section-3 {
+    font: 700 22px Abel, sans-serif;
+    background-color: #078;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+.section-4 {
+    font: 700 22px Abel, sans-serif;
+    background-color: #329;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+.section-5 {
+    font: 700 22px Abel, sans-serif;
+    background-color: #299;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+.section-6 {
+    font: 700 22px Abel, sans-serif;
+    background-color: #46a;
+    color: #bbb;
+    text-align: center;
+    padding-top: 10px;
+    height: 48px;
+}
+
+/*
+ *
+ * Projects structure
+ *
+ */
+
+.project {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-section h2,
+.section-2 h2,
+.section-3 h2,
+.section-4 h2,
+.section-5 h2,
+.section-6 h2 {
+    margin: 0;
+    padding: 0;
+    font: 700 22px Abel, sans-serif;
+    color: #bbb;
+}
+
+.title {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ccc;
+    background-color: #888;
+    vertical-align: middle;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.title h2 {
+    font: bold 24px Poiret One, cursive;
+    margin: 0;
+}
+
+.skills-link {
+    display: flex;
+    width: 50%;
+    height: 40px;
+    display: flex;
+    color: #333;
+    background-color: #999;
+}
+
+.description {
+    font-weight: 700;
+    width: 50%;
+    height: 170px;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    color: #333;
+    background-color: #ccc;
+    text-align: right;
+}
+
+.image-project {
+    width: 50%;
+    height: 170px;
+    display: inherit;
+    background-color: #000;
+}
+
+.image-project img {
+    cursor: crosshair;
+}
+
+.arrow {
+    width: 100%;
+    font-size: 70px;
+    color: #999;
+}
+
+
+/*
+ *
+ * Added projects
+ *
+ */
+
+.project-description-1,
+.project-description-2,
+.project-description-3,
+.project-description-4,
+.project-description-5  {
+    padding: 15px 15px 0 15px;
+    width: 100%;
+}
+
+
+/* Project placeholder */
+
+.placeholder-title {
+    width: 100%;
+    height: 40px;
+    font: bold 24px Poiret One, cursive;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ccc;
+    background-color: #888;
+    vertical-align: middle;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.placeholder-title h2 {
+    margin: 0;
+    font: bold 24px Poiret One, cursive;
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: #ccc;
+    padding: 15px;
+    font-weight: 700;
+}
+
+
+/*
+ *
+ * Modals
+ *
+ */
+
+.modal-content {
+    font: 25px Roboto, sans-serif;
+    background-color: #000;
+}
+
+.modal-header {
+    padding: 0;
+}
+
+.modal-title {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "Poiret One", cursive;
+    color: #999;
+    background-color: #000;
+    text-align: center;
+}
+
+.modal-body {
+    font-style: italic;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.modal-footer {
+    background-color: #999;
+    font-size: 16px;
+    padding: 1px 1px 1px 1px;
+}
+
+.modal-footer a {
+    padding-right: 30px;
+    color: #69e;
+    text-shadow: 1px 1px #458;
+}
+
+
+/*
+ *
+ * Footer
+ *
+ */
+
+.footer {
+    padding: 10px 10px 10px 50px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    min-height: 48px;
+    background-color: #333;
+}

@@ -1,0 +1,38 @@
+/*
+The following properties are not CSS standard.
+They don't validate CSS Level 3.
+I included them in here to validate my style.css file.
+*/
+
+.menu-icon {
+    fill: #888;
+}
+
+.menu-icon:hover {
+    fill: #69e;
+    stroke-width: 0.3px;
+    stroke: #458;
+}
+
+.icon {
+    fill: currentColor;
+    stroke-width: 1px;
+    stroke: #458;
+}
+
+
+/*
+This property disables selection in the header. Only the icons are clickable.
+*/
+
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently*/
+}
+
+/*
+source: http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css
+*/
